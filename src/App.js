@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./Button";
+import Player_1 from "./Player_1";
+import Player_2 from "./Player_2";
+import { useState } from 'react'
+import Reset from "./Reset";
+import './style.css'
 
 function App() {
+
+  const [count, setCount] = useState(5)
+  const [count2, setCount2] = useState(5)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="bloc">
+      <Player_1 count = {count} setCount = {setCount}/>
+      <Player_2 count2 = {count2} setCount2 = {setCount2}/>
+      </div>
+      <Button setCount = {setCount} setCount2 = {setCount2}/>
+      <Reset setCount = {setCount} setCount2 = {setCount2}/>
     </div>
   );
 }
